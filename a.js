@@ -75,27 +75,6 @@ Array.prototype.get = function (a, b, c) {
 	return [...this.iterate(a, b, c)];
 };
 
-function extend(_, __) {
-	[_a, __a] = [_, __];
-	log(_a, __a,"1");
-	for (var i in __a) {
-		log(i, __a[i],"2");
-		if (i in _a) {
-			log(_a[i],"3")
-			if (_a[i] instanceof Object) {
-				log(_a[i],__a[i],"4")
-				extend(_a[i], __a[i]);
-			} else if(__a[i]) {
-				log(__a[i],"5")
-				_a[i] = __a[i];
-			}
-		} else if(__a[i]) {
-			log(i,"6")
-			_a[i] = __a[i];
-		}
-	}
-}
-
 function multi_str(s, t){
 	var str = "";
 	for(var i of range(t))
