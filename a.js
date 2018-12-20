@@ -133,6 +133,16 @@ function executeAll(){
 	}
 }
 
+async function begin(){
+  elaborate();
+  sleep(2000);
+  executeAll();
+  console.log(printAll(allCommands));
+}
+
+function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); } 
+
+
 // clicks all [show] link
 $('.jslink:contains(show)').click();
 
